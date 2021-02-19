@@ -16,10 +16,10 @@ const App = () => {
     .then(res => 
     {
       setCharacter(res.data);
-      // console.log('res', res);
-      // console.log(character);
+      // console.log('res = ', res.data);
     })
   },[]);
+  // console.log('char = ',character);
    return (
     <div className="App">
       <h1 className="Header">Characters</h1>

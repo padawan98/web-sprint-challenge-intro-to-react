@@ -1,10 +1,10 @@
 // Write your Character component here
-import React,{useState} from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const StyledChar = styled.div`
     text-align:center;
-    h1
+    button
     {
         color:#cd9dd4;
         &:hover
@@ -16,17 +16,20 @@ const StyledChar = styled.div`
 
 const Character = (props) =>
 {
-    const {charInfo} = useState(props);
-    console.log(charInfo);
-            charInfo.map(oneChar => 
+    const {charInfo} = props;
+    // console.log(charInfo);
+    return(        
+        charInfo.map(oneChar => 
             {
                 return(
                     <StyledChar>
-                        <h1>{oneChar.name}</h1>
-                        <p>{oneChar.species}</p>
+                        <div className="card">
+                            <button>{oneChar.name}</button>
+                            <h2>{oneChar.skin_color}</h2>
+                        </div>
                     </StyledChar>
                 );
-            });
+            }));
 }
 
 
